@@ -41,11 +41,7 @@ export function FeaturesRoadmapSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16" data-aos="fade-up">
-          <div className="inline-flex items-center space-x-2 mb-6">
-            <span className="text-sm font-medium text-[#2AE87C] bg-[#2AE87C]/10 px-3 py-1 rounded-full uppercase tracking-wide">
-              Para vender mais
-            </span>
-          </div>
+
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Como transformamos seu <span className="bg-gradient-to-r from-[#2AE87C] to-[#0AD4CA] bg-clip-text text-transparent">atendimento</span>
           </h2>
@@ -57,14 +53,14 @@ export function FeaturesRoadmapSection() {
           <div className="space-y-8" data-aos="fade-right">
             {features.map((feature, index) => (
               <div key={index} className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 bg-gradient-to-r from-[#2AE87C] to-[#0AD4CA] rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <feature.icon className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 bg-gradient-to-r from-[#2AE87C] to-[#0AD4CA] rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <feature.icon className="w-8 h-8 text-white" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-[#2AE87C] transition-colors">
+                  <h3 className="text-xl font-bold text-foreground mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-[#2AE87C] font-medium mb-2">
+                  <p className="text-[#008060] font-medium mb-2">
                     {feature.subtitle}
                   </p>
                   <p className="text-muted-foreground leading-relaxed">

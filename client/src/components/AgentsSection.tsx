@@ -172,100 +172,79 @@ export function AgentsSection({ selectedAgent, onAgentChange }: AgentsSectionPro
 
         {/* Desktop Layout */}
         <div className="hidden lg:block">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="flex flex-row gap-10 items-stretch">
             {/* Left Side - Featured Agent */}
-            <div className="sticky top-24" data-aos="fade-right">
-              <Card className="bg-white dark:bg-slate-800 border-0 shadow-2xl hover:shadow-3xl transition-all duration-300">
-                <div className="p-8">
+            <div className="flex-1 flex flex-col justify-center">
+              <Card className="bg-white dark:bg-slate-800 border-0 shadow-xl transition-all duration-300 px-8 py-10 rounded-3xl flex flex-col h-full">
+                <div className="flex flex-row gap-10 items-start">
                   {/* Agent Image */}
-                  <div className="relative mb-6">
-                    <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800">
-                      <img
-                        src={agents[selectedAgent].image}
-                        alt={agents[selectedAgent].name}
-                        className="w-full h-80 object-cover object-center agent-image"
-                        loading="lazy"
-                      />
-                    </div>
-                    
-                    {/* Agent Badge */}
-                    <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-r from-[#2AE87C] to-[#0AD4CA] rounded-2xl flex items-center justify-center shadow-lg">
-                      {React.createElement(agents[selectedAgent].icon, { className: "w-8 h-8 text-white" })}
+                  <div className="relative w-52 h-56 flex-shrink-0">
+                    <img
+                      src={agents[selectedAgent].image}
+                      alt={agents[selectedAgent].name}
+                      className="w-full h-full object-cover object-center rounded-2xl shadow-lg"
+                      loading="lazy"
+                    />
+                    <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-r from-[#2AE87C] to-[#0AD4CA] rounded-2xl flex items-center justify-center shadow-xl border-4 border-white">
+                      {React.createElement(agents[selectedAgent].icon, { className: "w-7 h-7 text-white" })}
                     </div>
                   </div>
-
-                  {/* Agent Info */}
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-3xl font-bold text-foreground mb-2">
-                        {agents[selectedAgent].name}
-                      </h3>
-                      <p className="text-lg text-[#2AE87C] font-semibold mb-4">
-                        {agents[selectedAgent].role}
-                      </p>
-                      <p className="text-muted-foreground leading-relaxed mb-6">
-                        {agents[selectedAgent].detailedDescription}
-                      </p>
-                    </div>
-
-                    {/* Features */}
-                    <div className="space-y-3">
+                  {/* Info */}
+                  <div className="flex-1 flex flex-col gap-1 justify-center">
+                    <h3 className="text-2xl font-bold text-foreground mb-1">{agents[selectedAgent].name}</h3>
+                    <p className="text-lg text-[#2AE87C] font-semibold mb-2">{agents[selectedAgent].role}</p>
+                    <div className="flex flex-col gap-1 mb-1">
                       {agents[selectedAgent].features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center space-x-3">
+                        <div key={featureIndex} className="flex items-center gap-2">
                           <CheckCircle className="w-5 h-5 text-[#2AE87C] flex-shrink-0" />
-                          <span className="text-sm text-muted-foreground">{feature}</span>
+                          <span className="text-base text-muted-foreground">{feature}</span>
                         </div>
                       ))}
                     </div>
-
-                    {/* CTA Button */}
-                    <div className="pt-4">
-                      <Button className="bg-[#00D6AB] text-white hover:bg-[#00b898] hover:scale-105 transition-all duration-200 w-full">
-                        {t('talkToAgent')} {agents[selectedAgent].name}
-                      </Button>
-                    </div>
                   </div>
+                </div>
+                {/* Description */}
+                <div className="w-full flex flex-col items-center justify-center mt-10 mb-6">
+                  <p className="text-muted-foreground leading-relaxed text-center text-base max-w-md">
+                    {agents[selectedAgent].detailedDescription}
+                  </p>
+                </div>
+                {/* CTA Button */}
+                <div className="w-full flex justify-center mt-4 mb-2">
+                  <Button className="bg-[#00D6AB] text-white hover:bg-[#00b898] hover:scale-105 transition-all duration-200 text-lg font-semibold px-8 py-3 w-auto mx-auto">
+                    Quero esse especialista no meu time
+                  </Button>
                 </div>
               </Card>
             </div>
-
             {/* Right Side - Agent Grid */}
-            <div className="grid grid-cols-3 gap-4" data-aos="fade-left">
-              {agents.map((agent, index) => {
-                const IconComponent = agent.icon;
-                return (
-                  <Card 
-                    key={index} 
-                    className={`cursor-pointer transition-all duration-300 hover:shadow-lg text-center p-4 ${
-                      index === selectedAgent 
-                        ? 'ring-2 ring-[#2AE87C] bg-[#2AE87C]/5 dark:bg-[#2AE87C]/10' 
-                        : 'bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700'
-                    }`}
-                    onClick={() => onAgentChange(index)}
-                  >
-                    <div className="flex flex-col items-center space-y-3">
-                      <div className={`w-16 h-16 ${agent.color} rounded-2xl flex items-center justify-center shadow-lg transition-transform duration-300 ${
-                        index === selectedAgent ? 'scale-110' : 'hover:scale-105'
-                      }`}>
-                        <IconComponent className="w-8 h-8 text-white" />
+            <div className="flex-1 flex flex-col justify-center">
+              <div className="grid grid-cols-3 gap-4">
+                {agents.map((agent, index) => {
+                  const IconComponent = agent.icon;
+                  return (
+                    <Card
+                      key={index}
+                      className={`cursor-pointer transition-all duration-300 text-center py-4 px-2 rounded-xl border-2 flex flex-col items-center gap-2 shadow-none hover:shadow-md bg-white dark:bg-slate-800
+                        ${index === selectedAgent ? 'border-[#2AE87C] ring-2 ring-[#2AE87C] scale-105 bg-[#2AE87C]/10 dark:bg-[#2AE87C]/10 shadow-lg' : 'border-transparent hover:border-[#2AE87C]/50'}
+                      `}
+                      onClick={() => onAgentChange(index)}
+                      style={{ minHeight: '120px' }}
+                    >
+                      <div className={`w-10 h-10 ${agent.color} rounded-xl flex items-center justify-center shadow-md transition-transform duration-300 mb-1
+                        ${index === selectedAgent ? 'scale-110' : 'hover:scale-105'}`}
+                      >
+                        <IconComponent className="w-5 h-5 text-white" />
                       </div>
-                      
-                      <div className="text-center">
-                        <h4 className={`font-bold text-lg mb-1 transition-colors duration-300 ${
-                          index === selectedAgent ? 'text-[#2AE87C]' : 'text-foreground'
-                        }`}>
-                          {agent.name}
-                        </h4>
-                        <p className="text-sm text-muted-foreground">{agent.role}</p>
-                      </div>
-                      
+                      <h4 className={`font-bold text-base transition-colors duration-300 mb-0 ${index === selectedAgent ? 'text-[#2AE87C]' : 'text-foreground'}`}>{agent.name}</h4>
+                      <p className="text-xs text-muted-foreground mb-0">{agent.role}</p>
                       {index === selectedAgent && (
-                        <div className="w-3 h-3 bg-[#2AE87C] rounded-full animate-pulse"></div>
+                        <div className="w-2 h-2 bg-[#2AE87C] rounded-full animate-pulse mt-1"></div>
                       )}
-                    </div>
-                  </Card>
-                );
-              })}
+                    </Card>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>

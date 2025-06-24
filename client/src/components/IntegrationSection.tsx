@@ -26,24 +26,35 @@ export function IntegrationSection() {
         </div>
         
         <div className="overflow-hidden" data-aos="fade-up" data-aos-delay="600">
-          <div className="flex animate-scroll">
+          <div className="flex gap-4 animate-marquee whitespace-nowrap">
             {/* Multiple duplicated sets for seamless infinite loop */}
             {Array.from({ length: 4 }, (_, setIndex) => 
               integrations.map((integration, index) => (
                 <div 
                   key={`${setIndex}-${index}`}
-                  className="flex items-center justify-center hover:scale-110 transition-transform duration-300 mx-4 flex-shrink-0 min-w-[140px]"
+                  className="flex items-center justify-center hover:scale-110 transition-transform duration-300 flex-shrink-0 min-w-[180px]"
                 >
                   <img 
                     src={integration.image} 
                     alt={integration.name}
-                    className="h-24 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                    className="h-40 w-auto object-contain filter grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300"
                   />
                 </div>
               ))
             )}
           </div>
         </div>
+
+        {/* CSS para animação de esteira infinita */}
+        <style>{`
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-marquee {
+            animation: marquee 28s linear infinite;
+          }
+        `}</style>
       </div>
     </section>
   );
