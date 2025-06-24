@@ -1,0 +1,24 @@
+Vou te passar o que preciso que vá alterando. Primeiro, padronize os textos, não precisa ter todas as palavras com a letra maíuscula, apenas a primeira da frase ou do título
+
+Na section 1 e também na navbar, preciso que crie um hover bom e elegante nos botões de CTA, padronize esse mesmo hover para todos os botões.
+
+Na Section 2, altere o texto para: Integre com as ferramentas que você já usa. No lugar de cada elemento desta section, preciso que altere pelo PNG correspondente, que irei te enviar por aqui. Não precisa ter o nome juntamente com a imagem, apenas o PNG já é suficiente. Aumente a velocidade da rotação da animação também.
+
+Na section 3, preciso que exclua ela e substitua por outra. Vou te passar as informações dessa section que iremos adicionar e também uma referência em anexo: * Objetivo: Mostrar o que a Sayle faz e os ganhos para o cliente.
+Conteúdo:*
+Destaque das funcionalidades (ex.: captura de leads, integração com CRM)
+Benefícios reais (ex.: mais vendas, menos operação)
+Passo a passo (ex.: 1. Briefing > 2. Setup > 3. Ativação)
+Ícones ou cards visuais
+Botão CTA:** “Ver demonstração agora”
+
+A seguir, preciso que exclua a section cujo título é "Do Zero ao Lucro em 15 Dias" e, no lugar dela, adicione a seção cujo título é "Vendas Inteligentes em Todos os Canais", mas queria algo igual a referencia que vou te mandar. Esta seção deve ser assim: ### Atenda onde seu cliente está
+
+Objetivo: Mostrar que a Sayle é omnichannel e se adapta ao comportamento do consumidor.
+Conteúdo:
+Headline: “Esteja onde seu cliente está”
+Logos de canais: WhatsApp, Instagram, Site, Telegram, etc.
+Texto de apoio
+Botão CTA:** “Quero atendimento omnichannel”
+
+Na seção cujo título é "Sua Equipe de Vendas que Nunca Para", preciso que nas versões para computador, o card do agente esteja ao lado dos botões dos outros agentes, como duas flex-box. Nas versões mobile, preciso que os botões que indicam os agentes estejam acima do card do agente e em formato de carrossel, pensando no UX
