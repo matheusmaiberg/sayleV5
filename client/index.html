@@ -12,6 +12,12 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://sayle.ai/" />
     
+    <!-- Performance Meta Tags -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://connect.facebook.net" />
+    
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Sayle.ai - IA Conversacional para Atendimento 24/7" />
     <meta property="og:description" content="Automatize seu atendimento com IA, qualifique leads em tempo real e aumente conversões em até 300%. Integração completa WhatsApp, Instagram e telefone." />
@@ -19,18 +25,55 @@
     <meta property="og:url" content="https://sayle.ai/" />
     <meta property="og:site_name" content="Sayle.ai" />
     <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image" content="https://sayle.ai/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Sayle.ai - IA Conversacional para Atendimento 24/7" />
     <meta name="twitter:description" content="Automatize seu atendimento com IA, qualifique leads e aumente vendas em até 300%." />
+    <meta name="twitter:image" content="https://sayle.ai/twitter-image.jpg" />
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#3B82F6" />
+    <meta name="msapplication-TileColor" content="#3B82F6" />
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Sayle.ai",
+      "description": "Plataforma de IA conversacional para atendimento automatizado",
+      "url": "https://sayle.ai",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "Sayle.ai",
+        "url": "https://sayle.ai"
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
-    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
   </body>
 </html>

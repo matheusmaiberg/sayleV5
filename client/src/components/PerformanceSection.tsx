@@ -11,28 +11,28 @@ export function PerformanceSection() {
       title: t('noHallucinations'),
       subtitle: t('guaranteedAccuracy'),
       description: t('noHallucinationsDesc'),
-      color: 'bg-green-500'
+      color: 'bg-primary'
     },
     {
       icon: Brain,
       title: t('humanization'),
       subtitle: t('naturalPersonality'),
       description: t('humanizationDesc'),
-      color: 'bg-blue-500'
+      color: 'bg-accent'
     },
     {
       icon: Users,
       title: t('humanEscalation'),
       subtitle: t('intelligentTransfer'),
       description: t('humanEscalationDesc'),
-      color: 'bg-purple-500'
+      color: 'bg-secondary'
     },
     {
       icon: Target,
       title: t('continuousLearning'),
       subtitle: t('improvesWithTime'),
       description: t('continuousLearningDesc'),
-      color: 'bg-orange-500'
+      color: 'bg-muted'
     }
   ];
 
@@ -66,10 +66,9 @@ export function PerformanceSection() {
           <Card className="p-6">
             <div className="flex items-center space-x-3 mb-4">
               <div 
-                className="w-10 h-10 rounded-full flex items-center justify-center"
-                style={{ backgroundColor: 'hsl(168, 100%, 42%)' }}
+                className="w-10 h-10 rounded-full flex items-center justify-center bg-primary"
               >
-                <Brain className="w-5 h-5 text-white" />
+                <Brain className="w-5 h-5 text-primary-foreground" />
               </div>
               <div>
                 <div className="font-semibold text-foreground">Sayle.ai</div>
@@ -77,17 +76,15 @@ export function PerformanceSection() {
               </div>
             </div>
             <div 
-              className="text-white p-4 rounded-lg rounded-tl-none mb-4"
-              style={{ backgroundColor: 'hsl(168, 100%, 42%)' }}
+              className="text-primary-foreground p-4 rounded-lg rounded-tl-none mb-4 bg-primary"
             >
               {t('aiGreetingExample')}
             </div>
-            <div className="bg-blue-500 text-white p-4 rounded-lg rounded-tr-none mb-4 ml-8">
+            <div className="bg-accent text-accent-foreground p-4 rounded-lg rounded-tr-none mb-4 ml-8">
               {t('impressiveResponse')}
             </div>
             <div 
-              className="text-white p-4 rounded-lg rounded-tl-none"
-              style={{ backgroundColor: 'hsl(168, 100%, 42%)' }}
+              className="text-primary-foreground p-4 rounded-lg rounded-tl-none bg-primary"
             >
               {t('understandHowWorks')}
             </div>

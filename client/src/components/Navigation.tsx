@@ -27,13 +27,13 @@ export function Navigation() {
           {/* Desktop Navigation - Hidden on tablet and mobile */}
           <div className="hidden lg:flex items-center space-x-8">
             <a href="#agents" className="text-muted-foreground hover:text-foreground transition-colors">
-              {t('navAgents')}
+              {t('navigation.title.agents')}
             </a>
             <a href="#integrations" className="text-muted-foreground hover:text-foreground transition-colors">
-              {t('navIntegrations')}
+              {t('navigation.title.integrations')}
             </a>
             <a href="#process" className="text-muted-foreground hover:text-foreground transition-colors">
-              {t('navProcess')}
+              {t('navigation.title.process')}
             </a>
           </div>
           
@@ -68,11 +68,11 @@ export function Navigation() {
             
             {/* Desktop Auth Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
-              <Button variant="ghost" className="hover:bg-accent hover:text-foreground transition-colors">{t('login')}</Button>
+              <Button variant="ghost" className="hover:bg-accent hover:text-foreground transition-colors">{t('navigation.login')}</Button>
               <Button 
                 className="bg-[#00D6AB] text-white hover:bg-[#00b898] hover:scale-105 transition-all duration-200 shadow-lg"
               >
-                {t('buyNow')}
+                {t('navigation.buy')}
               </Button>
             </div>
 
@@ -97,29 +97,29 @@ export function Navigation() {
                 className="text-muted-foreground hover:text-foreground py-2 px-4 rounded-lg hover:bg-accent transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {t('navAgents')}
+                {t('navigation.title.agents')}
               </a>
               <a 
                 href="#integrations" 
                 className="text-muted-foreground hover:text-foreground py-2 px-4 rounded-lg hover:bg-accent transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {t('navIntegrations')}
+                {t('navigation.title.integrations')}
               </a>
               <a 
                 href="#process" 
                 className="text-muted-foreground hover:text-foreground py-2 px-4 rounded-lg hover:bg-accent transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {t('navProcess')}
+                {t('navigation.title.process')}
               </a>
               <div className="flex flex-col space-y-2 pt-4 border-t border-border">
-                <Button variant="ghost" className="justify-start w-full">{t('login')}</Button>
+                <Button variant="ghost" className="justify-start w-full">{t('navigation.login')}</Button>
                 <Button 
                   className="justify-start text-white w-full" 
                   style={{ backgroundColor: 'hsl(168, 100%, 42%)' }}
                 >
-                  {t('buyNow')}
+                  {t('navigation.buy')}
                 </Button>
               </div>
             </div>

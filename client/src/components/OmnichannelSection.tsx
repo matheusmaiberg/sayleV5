@@ -76,7 +76,7 @@ export function OmnichannelSection() {
           <div className="space-y-8 order-1 lg:order-2" data-aos="fade-left">
             <div>
               <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6 break-words">
-                Esteja onde seu <span className="bg-gradient-to-r from-[#2AE87C] to-[#0AD4CA] bg-clip-text text-transparent">cliente está</span>
+                Esteja onde seu <span className="bg-brand-gradient text-transparent">cliente está</span>
               </h2>
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6 sm:mb-8">
                 Integração completa com todas as plataformas que seus clientes já usam. Uma única IA, múltiplos canais, experiência unificada.

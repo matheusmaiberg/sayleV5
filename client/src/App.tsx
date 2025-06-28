@@ -5,7 +5,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { TranslationProvider } from "@/contexts/TranslationContext";
-import { AnimatedBackground } from "@/components/AnimatedBackground";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
 import { useEffect } from "react";
@@ -36,7 +35,6 @@ function App() {
       <ThemeProvider>
         <TranslationProvider>
           <TooltipProvider>
-            <AnimatedBackground />
             <div className="relative z-10">
               <Toaster />
               <Router />

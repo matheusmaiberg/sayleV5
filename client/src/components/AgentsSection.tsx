@@ -2,8 +2,7 @@ import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/useTranslation';
-import { Search, Heart, Handshake, Headphones, PieChart, RotateCcw, DollarSign, Cog, FileText, ChevronLeft, ChevronRight, Users, CheckCircle } from 'lucide-react';
-import { useState, useRef } from 'react';
+import { Search, Heart, Handshake, Headphones, PieChart, RotateCcw, DollarSign, Cog, FileText, Users, CheckCircle } from 'lucide-react';
 import jhonImg from '@assets/Agente Jhon_1750439807344.png';
 import camilaImg from '@assets/Agente Camila_1750439807343.png';
 import sofiaImg from '@assets/Agente Sofia_1750439807345.png';
@@ -21,96 +20,95 @@ interface AgentsSectionProps {
 
 export function AgentsSection({ selectedAgent, onAgentChange }: AgentsSectionProps) {
   const { t } = useTranslation();
-  const carouselRef = useRef<HTMLDivElement>(null);
 
   const agents = [
     {
       name: 'Jhon',
-      role: t('prospecting'),
+      role: t('agent.jhon.role'),
       icon: Search,
       color: 'bg-blue-500',
-      description: t('jhonDesc'),
-      detailedDescription: t('jhonDetailed'),
+      description: t('agent.jhon.description'),
+      detailedDescription: t('agent.jhon.details'),
       image: jhonImg,
       features: ['Análise de comportamento', 'Scoring de leads', 'Timing otimizado', 'Personalização automática']
     },
     {
       name: 'Camila',
-      role: t('presales'),
+      role: t('agent.camila.role'),
       icon: Heart,
       color: 'bg-pink-500',
-      description: t('camilaDesc'),
-      detailedDescription: t('camilaDetailed'),
+      description: t('agent.camila.description'),
+      detailedDescription: t('agent.camila.details'),
       image: camilaImg,
       features: ['Detecção automática de idioma', 'Segmentação geográfica', 'Mensagens contextuais', 'Campanhas automatizadas']
     },
     {
       name: 'Sofía',
-      role: t('salesClosing'),
+      role: t('agent.sofia.role'),
       icon: Handshake,
       color: 'bg-green-500',
-      description: t('sofiaDesc'),
-      detailedDescription: t('sofiaDetailed'),
+      description: t('agent.sofia.description'),
+      detailedDescription: t('agent.sofia.details'),
       image: sofiaImg,
       features: ['Técnicas de fechamento', 'Tratamento de objeções', 'Gatilhos de urgência', 'Negociação inteligente']
     },
     {
       name: 'Andrés',
-      role: t('support'),
+      role: t('agent.andres.role'),
       icon: Headphones,
       color: 'bg-yellow-500',
-      description: t('andresDesc'),
-      detailedDescription: t('andresDetailed'),
+      description: t('agent.andres.description'),
+      detailedDescription: t('agent.andres.details'),
       image: andresImg,
       features: ['Suporte 24/7', 'Integração logística', 'Resolução proativa', 'Escalação inteligente']
     },
     {
       name: 'Tomás',
-      role: t('cx'),
+      role: t('agent.tomas.role'),
       icon: PieChart,
       color: 'bg-purple-500',
-      description: t('tomasDesc'),
-      detailedDescription: t('tomasDetailed'),
+      description: t('agent.tomas.description'),
+      detailedDescription: t('agent.tomas.details'),
       image: tomasImg,
       features: ['Análise preditiva', 'Monitoramento em tempo real', 'Insights comportamentais', 'Otimização da jornada']
     },
     {
       name: 'Nicolas',
-      role: t('reactivation'),
+      role: t('agent.nicolas.role'),
       icon: RotateCcw,
       color: 'bg-orange-500',
-      description: t('nicolasDesc'),
-      detailedDescription: t('nicolasDetailed'),
+      description: t('agent.nicolas.description'),
+      detailedDescription: t('agent.nicolas.details'),
       image: nicolasImg,
       features: ['Detecção de inatividade', 'Campanhas de win-back', 'Ofertas personalizadas', 'Análise de churn']
     },
     {
       name: 'Clara',
-      role: t('billing'),
+      role: t('agent.clara.role'),
       icon: DollarSign,
       color: 'bg-emerald-500',
-      description: t('claraDesc'),
-      detailedDescription: t('claraDetailed'),
+      description: t('agent.clara.description'),
+      detailedDescription: t('agent.clara.details'),
       image: claraImg,
       features: ['Múltiplos meios de pagamento', 'Cobrança automatizada', 'Reconciliação bancária', 'Relatórios financeiros']
     },
     {
       name: 'Gabriel',
-      role: t('automation'),
+      role: t('agent.gabriel.role'),
       icon: Cog,
       color: 'bg-indigo-500',
-      description: t('gabrielDesc'),
-      detailedDescription: t('gabrielDetailed'),
+      description: t('agent.gabriel.description'),
+      detailedDescription: t('agent.gabriel.details'),
       image: gabrielImg,
       features: ['Integração de sistemas', 'Fluxos automatizados', 'Sincronização de dados', 'Monitoramento de processos']
     },
     {
       name: 'Lis',
-      role: t('processCreation'),
+      role: t('agent.lis.role'),
       icon: FileText,
       color: 'bg-rose-500',
-      description: t('lisDesc'),
-      detailedDescription: t('lisDetailed'),
+      description: t('agent.lis.description'),
+      detailedDescription: t('agent.lis.details'),
       image: lisImg,
       features: ['Design de funis', 'Análise comportamental', 'Otimização de conversão', 'Segmentação avançada']
     }
@@ -118,36 +116,6 @@ export function AgentsSection({ selectedAgent, onAgentChange }: AgentsSectionPro
 
   const currentAgent = agents[selectedAgent] || agents[0];
 
-  const scrollToCenter = (index: number) => {
-    if (carouselRef.current) {
-      const cardWidth = 160; // width + gap
-      const containerWidth = carouselRef.current.clientWidth;
-      const scrollPosition = (index * cardWidth) - (containerWidth / 2) + (cardWidth / 2);
-      
-      carouselRef.current.scrollTo({
-        left: scrollPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  const scrollLeft = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({
-        left: -160,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  const scrollRight = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({
-        left: 160,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   return (
     <section className="py-20 bg-gradient-to-br from-background to-secondary/30">
@@ -163,10 +131,10 @@ export function AgentsSection({ selectedAgent, onAgentChange }: AgentsSectionPro
             </div>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            {t('specializedAgents')}
+            {t('agents.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            {t('agentsDesc')}
+            {t('agents.subtitle')}
           </p>
         </div>
 

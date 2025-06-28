@@ -1,0 +1,10 @@
+{
+  "extends": "@parcel/config-default",
+  "transformers": {
+    "*.{ts,tsx}": ["@parcel/transformer-typescript-tsc"]
+  },
+  "resolvers": ["@parcel/resolver-default"],
+  "optimizers": {
+    "*.{png,jpg,jpeg,gif,svg,webp}": ["@parcel/optimizer-image"]
+  }
+} 

@@ -1,6 +1,7 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import { getLocalIP } from "./utils";
 
 const app = express();
 app.use(express.json());
@@ -56,17 +57,33 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // ALWAYS serve the app on port 5000
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
-  const port = 5000;
+  const port = parseInt(process.env.BACKEND_PORT || "5000");
+  const host = process.env.SERVER_HOST || "0.0.0.0";
+  const domain = process.env.DOMAIN;
+  
   server.listen(
     {
       port,
-      host: "0.0.0.0",
+      host,
     },
     () => {
-      log(`serving on port ${port}`);
+      const localIP = getLocalIP();
+      
+      log("🚀 Servidor Sayle.ai iniciado com sucesso!");
+      
+      if (domain) {
+        log(`🌐 Domínio customizado: https://${domain}`);
+      }
+      
+      log(`📍 Local: http://localhost:${port}`);
+      log(`🌍 Rede: http://${localIP}:${port}`);
+      log(`⚡ Modo: ${app.get("env")}`);
+      
+      if (process.env.FACEBOOK_API_KEY) {
+        log("📱 Facebook Conversion API: Configurada");
+      } else {
+        log("⚠️  Facebook Conversion API: Não configurada (defina FACEBOOK_API_KEY)");
+      }
     }
   );
 })();
