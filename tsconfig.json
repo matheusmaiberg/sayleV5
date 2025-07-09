@@ -24,7 +24,7 @@
       "@shared/*": ["shared/*"],
       "@assets/*": ["attached_assets/*"]
     },
-    "types": ["node"]
+    "types": ["node", "vite/client"]
   },
   "include": [
     "client/src/**/*",

@@ -1,0 +1,1 @@
+export { OmnichannelSection } from './OmnichannelSection';

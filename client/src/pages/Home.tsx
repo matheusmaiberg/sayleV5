@@ -1,16 +1,17 @@
-import { Navigation } from '@/components/Navigation';
-import { HeroSection } from '@/components/HeroSection';
-import { IntegrationSection } from '@/components/IntegrationSection';
-import { FeaturesRoadmapSection } from '@/components/FeaturesRoadmapSection';
-import { OmnichannelSection } from '@/components/OmnichannelSection';
-import { DashboardSection } from '@/components/DashboardSection';
-import { VideoSection } from '@/components/VideoSection';
-import { IndustrySection } from '@/components/IndustrySection';
-import { PerformanceSection } from '@/components/PerformanceSection';
-import { ImplementationSection } from '@/components/ImplementationSection';
-import { SocialProofSection } from '@/components/SocialProofSection';
-import { TestimonialSection } from '@/components/TestimonialSection';
-import { CTASection } from '@/components/CTASection';
+import { Navigation } from '@/components/section/navigation/Navigation';
+import { HeroSection } from '@/components/section/hero/HeroSection';
+import { MetricsCards } from '@/components/section/metrics/MetricsCards';
+import { IntegrationSection } from '@/components/section/integration';
+import { FeaturesRoadmapSection } from '@/components/section/features-roadmap';
+import { OmnichannelSection } from '@/components/section/omnichannel';
+import { DashboardSection } from '@/components/section/dashboard';
+import { VideoSection } from '@/components/section/video';
+import { IndustrySection } from '@/components/section/industry';
+import { PerformanceSection } from '@/components/section/performance';
+import { ImplementationSection } from '@/components/section/implementation';
+import { SocialProofSection } from '@/components/section/social-proof';
+import { TestimonialSection } from '@/components/section/testimonial';
+import { CTASection } from '@/components/section/cta';
 import { Footer } from '@/components/Footer';
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
     <div className="min-h-screen bg-background scroll-smooth overflow-x-hidden">
       <Navigation />
       <HeroSection />
+      <MetricsCards />
       <IntegrationSection />
       <FeaturesRoadmapSection />
       <OmnichannelSection />
